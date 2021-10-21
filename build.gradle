@@ -3,7 +3,7 @@ plugins {
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
 	id 'idea'
-	
+	id 'application'
 }
 
 group = 'ru.test'
@@ -14,8 +14,12 @@ repositories {
 	mavenCentral()
 }
 
+application {
+	mainClass = 'ru.test.application.Application'
+}
+
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-logging'
+	implementation 'org.springframework.boot:spring-boot-starter-logging:2.5.5'
 	implementation 'com.google.guava:guava:31.0.1-jre'
 	implementation 'org.springframework.boot:spring-boot-starter-web:2.5.5'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.5'
