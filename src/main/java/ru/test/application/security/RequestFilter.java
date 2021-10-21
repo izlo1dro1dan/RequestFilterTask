@@ -70,7 +70,7 @@ public class RequestFilter implements Filter {
                 return true;
             }
         } catch (ExecutionException e) {
-            requests = 1;
+            log.error(e.getMessage());
         }
         requests++;
         requestCountsPerIpAddress.put(clientIpAddress, requests);
